@@ -3,8 +3,11 @@
           <v-subheader>Recent search. Swipe left to delete</v-subheader>
           <v-list-tile
             v-for="(item, index) in history" :key="index"
-            class="pt-2"
-          >
+            class="pt-2" 
+            v-touch="{
+                left: () => removeSearchItem(index)
+            }" >
+            
             <v-list-tile-content>
               <v-list-tile-title v-html="item.text"></v-list-tile-title>
               <v-list-tile-title v-html="item.translation" class="cyan--text"></v-list-tile-title>
@@ -34,7 +37,11 @@
     methods: {
         showState(){
             console.log(this.history)
-        }
+        },
+        removeSearchItem(id){
+            console.log("About to delete", id)
+            this.$store.commit('removeSearch', id)
+        },
     }
   }
 </script>
