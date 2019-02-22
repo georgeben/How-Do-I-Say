@@ -1,5 +1,6 @@
 <template>
-    <v-list subheader>
+    <v-container>
+        <v-list subheader>
           <v-subheader>Recent search. Swipe left to delete</v-subheader>
           <v-list-tile
             v-for="(item, index) in history" :key="index"
@@ -18,6 +19,7 @@
             </v-list-tile-action>
           </v-list-tile>
         </v-list>
+    </v-container>
 </template>
 
 <script>

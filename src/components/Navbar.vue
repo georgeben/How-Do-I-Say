@@ -8,7 +8,7 @@
             <v-spacer></v-spacer>
             </v-toolbar>
 
-            <v-navigation-drawer v-model="drawer" absolute temporary>
+            <v-navigation-drawer v-model="drawer" app temporary>
                 <v-list class="pt-0" dense>
                     <v-list-tile
                     v-for="item in items"
