@@ -57,7 +57,14 @@ const apiKey = 'trnsl.1.1.20190221T144049Z.883b3d4ed8b6b562.8b58243bd33572951d04
                     }
                 })
                 .then(res => {
-                    this.showLoading = false
+                    this.showLoading = false;
+                    let language = this.languageOptions.filter(item => item.value == this.language)
+                    console.log("Selected language", language[0].text)
+                    this.$store.commit('addSearch',{
+                        text: this.textToTranslate,
+                        translation: res.data.text[0],
+                        language: language[0].text
+                    })
                     console.log("Response from yandex", res.data.text)
                 })
                 .catch(err => {

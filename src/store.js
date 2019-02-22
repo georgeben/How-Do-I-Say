@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    recentSearches: [],
   },
   mutations: {
-
+    addSearch(state, payload){
+      state.recentSearches.push(payload)
+    }
   },
   actions: {
 
