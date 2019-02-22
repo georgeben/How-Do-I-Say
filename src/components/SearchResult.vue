@@ -14,7 +14,7 @@
             </v-list-tile-content>
 
             <v-list-tile-action>
-              <v-icon color="cyan" @click="showState">close</v-icon>
+              <v-icon color="cyan" @click="removeSearchItem(index)">close</v-icon>
             </v-list-tile-action>
           </v-list-tile>
         </v-list>
@@ -26,18 +26,9 @@
     data () {
       return {
         history: this.$store.state.recentSearches,
-        items: [
-          { title: 'Jason Oner' },
-          { title: 'Ranee Carlson'},
-          { title: 'Cindy Baker', },
-          { title: 'Ali Connors',}
-        ],
       }
     },
     methods: {
-        showState(){
-            console.log(this.history)
-        },
         removeSearchItem(id){
             console.log("About to delete", id)
             this.$store.commit('removeSearch', id)
@@ -45,3 +36,14 @@
     }
   }
 </script>
+
+<style>
+.v-list__tile--active .v-list__tile__action:first-of-type .v-icon{
+    color: #00838F;
+}
+
+.v-navigation-drawer > .v-list .v-list__tile--active .v-list__tile__title{
+    color: #00838F;
+}
+</style>
+
