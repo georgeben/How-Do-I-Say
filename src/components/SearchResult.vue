@@ -32,7 +32,6 @@
     },
     methods: {
         removeSearchItem(id){
-            console.log("About to delete", id)
             this.$store.commit('removeSearch', id)
         },
     }
