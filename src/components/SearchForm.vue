@@ -65,7 +65,6 @@ const apiKey = 'trnsl.1.1.20190221T144049Z.883b3d4ed8b6b562.8b58243bd33572951d04
     methods: {
         translateText(){
             if(this.valid){
-                console.log("About to translate")
                 this.showLoading = true
                 axios.get(apiUrl, {
                     params: {
