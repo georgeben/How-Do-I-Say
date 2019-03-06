@@ -7,6 +7,7 @@
             v-model="textToTranslate"
             :rules="nameRules"
             label="Enter word to translate"
+            clearable
             required
           ></v-text-field>
         </v-flex>
@@ -82,7 +83,6 @@ const apiKey = 'trnsl.1.1.20190221T144049Z.883b3d4ed8b6b562.8b58243bd33572951d04
                         translation: res.data.text[0],
                         language: language[0].text
                     })
-                    console.log("Response from yandex", res.data.text)
                 })
                 .catch(err => {
                     this.showLoading = false
